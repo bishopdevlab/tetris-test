@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1220" />
+    <title>Stackline — Tetris</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Stackline 홈">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>STACKLINE</span>
+        </a>
+        <div class="status-pill"><span class="status-dot"></span><span id="header-status">READY TO PLAY</span></div>
+      </header>
+
+      <section class="hero-copy" aria-labelledby="game-title">
+        <p class="eyebrow">CLASSIC BLOCK PUZZLE <span>///</span> 001</p>
+        <h1 id="game-title">Build your <em>line.</em></h1>
+        <p class="subtitle">빠르게 생각하고, 빈틈없이 쌓아보세요.</p>
+      </section>
+
+      <section class="game-layout" aria-label="테트리스 게임">
+        <div class="board-panel">
+          <div class="board-frame">
+            <div class="board-head">
+              <span>PLAYFIELD</span>
+              <span id="level-label">LVL 01</span>
+            </div>
+            <div id="game-board" class="game-board" role="grid" aria-label="테트리스 게임 보드"></div>
+            <div id="board-overlay" class="board-overlay visible">
+              <div class="overlay-card">
+                <span class="overlay-kicker">READY?</span>
+                <h2 id="overlay-title">Stack your<br /><strong>best run.</strong></h2>
+                <p id="overlay-message">첫 블록을 배치하고 라인을 만들어보세요.</p>
+                <button id="start-button" class="primary-button">게임 시작 <span>↗</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="board-footer">
+            <span><kbd>←</kbd><kbd>→</kbd> MOVE</span>
+            <span><kbd>↑</kbd> ROTATE</span>
+            <span><kbd>↓</kbd> SOFT DROP</span>
+            <span><kbd>SPACE</kbd> DROP</span>
+          </div>
+        </div>
+
+        <aside class="side-panel">
+          <div class="score-card accent-card">
+            <div class="card-label">CURRENT SCORE <span>✦</span></div>
+            <div id="score" class="score-value">000000</div>
+            <div class="score-meta"><span><b id="lines">0</b> LINES</span><span><b id="level">1</b> LEVEL</span></div>
+          </div>
+
+          <div class="stat-row">
+            <div class="mini-card">
+              <span class="card-label">BEST SCORE</span>
+              <strong id="high-score">000000</strong>
+            </div>
+            <div class="mini-card next-card">
+              <span class="card-label">NEXT BLOCK</span>
+              <div id="next-piece" class="next-piece" aria-label="다음 블록 미리보기"></div>
+            </div>
+          </div>
+
+          <div class="control-card">
+            <div class="card-label">HOW TO PLAY</div>
+            <div class="control-line"><span><kbd>←</kbd><kbd>→</kbd></span><span>MOVE</span></div>
+            <div class="control-line"><span><kbd>↑</kbd></span><span>ROTATE</span></div>
+            <div class="control-line"><span><kbd>↓</kbd></span><span>SOFT DROP</span></div>
+            <div class="control-line"><span><kbd>SPACE</kbd></span><span>HARD DROP</span></div>
+            <div class="control-line"><span><kbd>P</kbd></span><span>PAUSE</span></div>
+          </div>
+
+          <button id="restart-button" class="secondary-button">새 게임 <span>↗</span></button>
+        </aside>
+      </section>
+
+      <section class="mobile-controls" aria-label="터치 조작">
+        <button data-action="left" aria-label="왼쪽 이동">←</button>
+        <button data-action="rotate" aria-label="회전">↻</button>
+        <button data-action="down" aria-label="빠르게 내리기">↓</button>
+        <button data-action="right" aria-label="오른쪽 이동">→</button>
+        <button data-action="drop" aria-label="즉시 내리기">⇣</button>
+      </section>
+
+      <footer class="footer-note">
+        <span>ONE LINE AT A TIME.</span>
+        <span>© 2024 STACKLINE</span>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
